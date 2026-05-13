@@ -7,13 +7,9 @@
         int TiempoMinutos { get; }
         string ToString();
     }
-
-    public class Receta : IReceta
+    public interface IExportador
     {
-        public string Nombre { get; private set; }
-        public string Chef { get; private set; }
-        public int TiempoMinutos { get; private set; }
-
+        void ExportarATxt(Modelos.Usuario usuario, string rutaArchivo);
     }
-   
+
 }
