@@ -1,0 +1,45 @@
+using Xunit;
+using SistemaGestorRecetas.Modelos;
+namespace Prueba
+{
+    public class RecetaTest
+    {
+        [Fact]
+        public void Constructor_AsignaCorrectamente()
+        {
+            //Arrage
+            GestorRecetas g = new GestorRecetas();
+            Receta receta = new Receta("Paella", "Chef Ramirez", 45);
+
+
+            //Act
+
+            //Assert
+            Assert.Equal("Paella", receta.Nombre);
+            Assert.Equal("Chef Ramírez", receta.Chef);
+            Assert.Equal(45, receta.TiempoMinutos);
+        }
+        [Fact]
+        public void To_stringFormatoCorrecto()
+        {
+            //Arrange
+            Receta receta = new Receta("Paella", "Chef Ramirez", 45);
+
+            //Act
+
+            //Assert
+            Assert.Equal("Paella - Chef Ramírez (45min)", receta.ToString());
+        }
+        [Fact]
+        public void TiempoMinutosNegativo_Correcto()
+        {
+            //Arrange
+            Receta receta = new Receta("Paella", "Chef Ramirez", 45);
+
+            //Act
+
+            //Assert
+            Assert.Throws<ArgumentException>(()=> new Receta("Test", "Chef", -1));
+        }
+    }
+}
