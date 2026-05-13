@@ -1,2 +1,2 @@
 # Examen-2
-Parcial 2
+# Vasquez Larios Elias y López Ortiz Bruno 
