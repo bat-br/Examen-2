@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Recetas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+655fbc9972ad3a8256a819d9e8bac364f63d2879")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4eb925485a2fb55f154275376dfde0269f789a66")]
 [assembly: System.Reflection.AssemblyProductAttribute("Recetas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Recetas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
