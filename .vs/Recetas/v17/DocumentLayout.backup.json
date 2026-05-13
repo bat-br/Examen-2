@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\gestores\\gestorrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:gestores\\gestorrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\programa principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:programa principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\servicios\\serviciorecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:servicios\\serviciorecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\modelos\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:modelos\\usuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\interfaces\\interfas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:interfaces\\interfas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\gestores\\gestorrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:gestores\\gestorrecetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\modelos\\recetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:modelos\\recetas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\interfaces\\in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:interfaces\\in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|c:\\users\\alumnos\\source\\repos\\examen-2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A09B0AD1-8EA0-45E0-9603-0C4A96294BB3}|Recetas.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,17 +42,34 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ServicioRecetas.cs",
+              "DocumentMoniker": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Servicios\\ServicioRecetas.cs",
+              "RelativeDocumentMoniker": "Servicios\\ServicioRecetas.cs",
+              "ToolTip": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Servicios\\ServicioRecetas.cs",
+              "RelativeToolTip": "Servicios\\ServicioRecetas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T16:14:51.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "GestorRecetas.cs",
               "DocumentMoniker": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Gestores\\GestorRecetas.cs",
               "RelativeDocumentMoniker": "Gestores\\GestorRecetas.cs",
               "ToolTip": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Gestores\\GestorRecetas.cs",
               "RelativeToolTip": "Gestores\\GestorRecetas.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAcwBQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwAIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-13T16:07:34.768Z",
               "EditorCaption": ""
@@ -56,19 +77,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "in.cs",
-              "DocumentMoniker": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Interfaces\\in.cs",
-              "RelativeDocumentMoniker": "Interfaces\\in.cs",
-              "ToolTip": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Interfaces\\in.cs",
-              "RelativeToolTip": "Interfaces\\in.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Interfas.cs",
+              "DocumentMoniker": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\Interfaces\\Interfas.cs",
+              "RelativeDocumentMoniker": "Interfaces\\Interfas.cs",
+              "ToolTip": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\Interfaces\\Interfas.cs",
+              "RelativeToolTip": "Interfaces\\Interfas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-13T16:02:07.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Recetas.cs",
               "DocumentMoniker": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Modelos\\Recetas.cs",
               "RelativeDocumentMoniker": "Modelos\\Recetas.cs",
@@ -81,26 +102,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Usuarios.cs",
               "DocumentMoniker": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Modelos\\Usuarios.cs",
               "RelativeDocumentMoniker": "Modelos\\Usuarios.cs",
               "ToolTip": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Modelos\\Usuarios.cs",
               "RelativeToolTip": "Modelos\\Usuarios.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAYwEoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-13T15:57:50.183Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Programa principal.cs",
+              "DocumentMoniker": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\Programa principal.cs",
+              "RelativeDocumentMoniker": "Programa principal.cs",
+              "ToolTip": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\Programa principal.cs",
+              "RelativeToolTip": "Programa principal.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAgwGAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-13T15:42:50.507Z",
               "EditorCaption": ""

@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\Recetas.csproj",
+      "projectUniqueName": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Recetas.csproj",
       "projectName": "Recetas",
-      "projectPath": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\Recetas.csproj",
+      "projectPath": "C:\\Users\\Alumnos\\source\\repos\\Examen-2\\Recetas.csproj",
       "packagesPath": "C:\\Users\\Alumnos\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Alumnos\\Source\\Repos\\Examen-2\\obj\\",
       "projectStyle": "PackageReference",
