@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SistemaRecetas.Modelos;
 
-namespace Recetas.Modelos
+public class Usuario
 {
-    internal class Usuarios
+    public string Nombre { get; set; }
+    public Dictionary<string, List<Receta>> MisLibros { get; private set; }
+
+    public Usuario(string nombre)
     {
+        Nombre = nombre;
+        MisLibros = new Dictionary<string, List<Receta>>();
+    }
+
+    public void CrearLibro(string nombreLibro)
+    {
+        if (!MisLibros.ContainsKey(nombreLibro))
+            MisLibros.Add(nombreLibro, new List<Receta>());
     }
 }
