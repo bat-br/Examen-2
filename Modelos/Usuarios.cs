@@ -32,7 +32,7 @@ public class Usuario
             throw new ArgumentException("El libro no existe");
     }
 
-    public void ObtenerLibrosDeRecetas(string nombreLibro)
+    public void ObtenerLibro(string nombreLibro)
     {
         if (MisLibros.ContainsKey(nombreLibro))
         {
@@ -47,7 +47,7 @@ public class Usuario
             throw new ArgumentException("El libro no existe");
         }
     }
-    public void ContarRecetasEnLibro(string nombreLibro)
+    public void ContarRecetas(string nombreLibro)
     {
         if (MisLibros.ContainsKey(nombreLibro))
         {

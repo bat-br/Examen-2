@@ -1,10 +1,9 @@
-﻿using SistemaGestorRecetas.Servicios;
+﻿using SistemaGestorRecetas.Interfaces;
 using SistemaRecetas.Modelos;
+using SistemaGestorRecetas.Servicios;
+using SistemaGestorRecetas.Gestores;
 
-class Program
-{
-    static void Main()
-    {
+
         IGestorRecetas gestor = new GestorRecetas();
         IExportador exportador = new ExportadorTxt();
         ServicioRecetas servicio = new ServicioRecetas(gestor, exportador);
@@ -32,8 +31,9 @@ class Program
         bool salir = false;
         while (!salir)
         {
+    int cantidad = usuarioActual.MisLibros.ContainsKey(nombreLibroActual) ? usuarioActual.MisLibros[nombreLibroActual].Count : 0;
             Console.WriteLine($"\n--- MENÚ PRINCIPAL ---");
-            Console.WriteLine($"Libro actual: '{nombreLibroActual}' ({usuarioActual.ContarRecetas()} recetas en total)");
+            Console.WriteLine($"Libro actual: '{nombreLibroActual}' ({cantidad} recetas en total)");
             Console.WriteLine("1. Mostrar Recetas disponibles en catálogo");
             Console.WriteLine("2. Ordenar libro actual");
             Console.WriteLine("3. Búsqueda binaria en catálogo");
@@ -94,12 +94,12 @@ class Program
                 case "5":
                     Console.Write("Ingrese el nombre del libro al que desea cambiar: ");
                     string cambioLibro = Console.ReadLine();
-                    if (usuarioActual.ObtenerLibro(cambioLibro) != null)
-                    {
-                        nombreLibroActual = cambioLibro;
-                        Console.WriteLine("Libro cambiado.");
-                    }
-                    else
+                     if (usuarioActual.MisLibros.ContainsKey(cambioLibro))
+                         {
+                            nombreLibroActual = cambioLibro;
+                            Console.WriteLine("Libro cambiado.");
+                         }
+            else
                     {
                         Console.WriteLine("El libro no existe.");
                     }
@@ -110,7 +110,7 @@ class Program
                 case "7":
                     Console.Write("Nombre del archivo (ej. misrecetas.txt): ");
                     string ruta = Console.ReadLine();
-                    exportador.ExportarATxt(usuarioActual, ruta);
+                    exportador.ExportarAtxt(usuarioActual, ruta);
                     Console.WriteLine("Archivo exportado exitosamente.");
                     break;
                 case "8":
@@ -121,5 +121,3 @@ class Program
                     break;
             }
         }
-    }
-}
