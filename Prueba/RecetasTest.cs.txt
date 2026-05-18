@@ -1,6 +1,8 @@
+
 using Xunit;
 using SistemaGestorRecetas.Modelos;
-namespace Prueba
+namespace RecetasTest
+
 {
     public class RecetaTest
     {
@@ -39,7 +41,15 @@ namespace Prueba
             //Act
 
             //Assert
-            Assert.Throws<ArgumentException>(()=> new Receta("Test", "Chef", -1));
+            Assert.Throws<ArgumentException>(() => new Receta("Test", "Chef", -1));
+        }
+        [Fact]
+        public void TiempoEnMinutos_Cero_LanzaArgumentException()
+        {
+            //Arrange
+            //Act
+            //Assert
+            Assert.Throws<ArgumentException>(() => new Receta("Test", "Chef", 0));
         }
     }
 }

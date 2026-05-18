@@ -73,8 +73,7 @@
               "RelativeToolTip": "Servicios\\ServicioRecetas.cs",
               "ViewState": "AgIAAFgAAAAAAAAAAAAzwG0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T16:21:35.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T16:21:35.662Z"
             },
             {
               "$type": "Document",
@@ -99,8 +98,7 @@
               "RelativeToolTip": "Interfaces\\Interfas.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAA9wA0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T16:40:15.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T16:40:15.999Z"
             },
             {
               "$type": "Document",
@@ -160,8 +158,7 @@
               "RelativeToolTip": "Gestores\\GestorRecetas.cs",
               "ViewState": "AgIAAH0AAAAAAAAAAADwvwcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T16:07:34.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T16:07:34.768Z"
             },
             {
               "$type": "Document",
@@ -185,8 +182,7 @@
               "RelativeToolTip": "Modelos\\Recetas.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T15:58:09.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T15:58:09.187Z"
             },
             {
               "$type": "Document",
@@ -198,8 +194,7 @@
               "RelativeToolTip": "Modelos\\Usuarios.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAuwDEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T15:57:50.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T15:57:50.183Z"
             }
           ]
         }

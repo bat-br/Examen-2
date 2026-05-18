@@ -1,0 +1,227 @@
+namespace Gestor
+
+{
+    public class GestorRecetasTest
+    {
+        [Fact]
+        public void AgregarReceta()
+        {
+
+            var gestor = new GestorRecetas();
+            var receta = new Receta("Chilaquiles", "Chef Ana", 20);
+
+            //
+            gestor.AgregarReceta(receta);
+
+            // Assert
+            Assert.Single(gestor.CatálogoGlobal);
+            Assert.Contains(receta, gestor.CatálogoGlobal);
+        }
+        [Fact]
+        public void AgregarReceta_Duplicado_NoDuplica()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var receta1 = new Receta("Tacos al Pastor", "Chef Luis", 15);
+            var receta2 = new Receta("Tacos al Pastor", "Chef Luis", 15);
+
+            // Act
+            gestor.AgregarReceta(receta1);
+            gestor.AgregarReceta(receta2);
+
+            // Assert
+            Assert.Single(gestor.CatálogoGlobal);
+        }
+        [Fact]
+        public void EliminarReceta()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var receta = new Receta("Pozole", "Chef Juan", 90);
+            gestor.AgregarReceta(receta);
+
+            // Act
+            gestor.EliminarReceta("Pozole");
+
+            // Assert
+            Assert.Empty(gestor.CatálogoGlobal);
+        }
+        [Fact]
+        public void BuscarPorNombre_CaseInsensitive_Encuentra()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var receta = new Receta("PIZZA", "Chef Luigi", 30);
+            gestor.AgregarReceta(receta);
+
+            // Act
+            var resultado = gestor.BuscarPorNombre("pizza");
+
+            // Assert
+            Assert.NotEmpty(resultado);
+            Assert.Contains(resultado, r => r.Nombre.Equals("PIZZA", StringComparison.OrdinalIgnoreCase));
+
+        }
+        [Fact]
+        public void BuscarPorNombre_Parcial_Encuentra()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            gestor.AgregarReceta(new Receta("Pastel de Chocolate", "Chef Repostero", 60));
+
+            // Act
+            var resultado = gestor.BuscarPorNombre("Pastel");
+
+            // Assert
+            Assert.Single(resultado);
+            Assert.Contains(resultado, r => r.Nombre.Contains("Pastel"));
+        }
+        [Fact]
+        public void BuscarPorNombre_SinCoincidencias_RetornarVacio()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            gestor.AgregarReceta(new Receta("Enchiladas", "Chef Maria", 25));
+            // Act
+            var resultado = gestor.BuscarPorNombre("Sopa");
+            // Assert
+            Assert.Empty(resultado);
+        }
+        [Fact]
+        public void QuickSort_OrdenAcendenteCorrect()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta>
+            {
+                new Receta("Tamales", "Chef Pepe", 45),
+                new Receta("Enchiladas", "Chef Sofia", 25),
+                new Receta("Barbacoa", "Chef Gaby", 180)
+            };
+
+            // Act
+            gestor.OrdenarQuickSort(lista, 0, lista.Count - 1);
+
+            // Assert
+            Assert.Equal("Barbacoa", lista[0].Nombre);
+            Assert.Equal("Enchiladas", lista[1].Nombre);
+            Assert.Equal("Tamales", lista[2].Nombre);
+        }
+        [Fact]
+        public void QuickSort_ListaUnElentoNoCrash()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta> { new Receta("Solo Una", "Chef Único", 10) };
+
+            // Act
+            var excepcion = Record.Exception(() => gestor.OrdenarQuickSort(lista, 0, lista.Count - 1));
+
+            // Assert
+            Assert.Null(excepcion);
+            Assert.Single(lista);
+        }
+        [Fact]
+        public void MergeSort_OrdenAcendenteCorrect()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta>
+            {
+                new Receta("Tamales", "Chef Pepe", 45),
+                new Receta("Enchiladas", "Chef Sofia", 25),
+                new Receta("Barbacoa", "Chef Gaby", 180)
+            };
+
+            // Act
+            var listaOrdenada = gestor.OrdenarMergeSort(lista);
+
+            // Assert
+            Assert.Equal("Barbacoa", listaOrdenada[0].Nombre);
+            Assert.Equal("Enchiladas", listaOrdenada[1].Nombre);
+            Assert.Equal("Tamales", listaOrdenada[2].Nombre);
+        }
+        [Fact]
+        public void MergeSort_NoModificaOriginal()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta>
+            {
+                new Receta("Tamales", "Chef Pepe", 45),
+                new Receta("Enchiladas", "Chef Sofia", 25),
+                new Receta("Barbacoa", "Chef Gaby", 180)
+            };
+            // Act
+            var listaOrdenada = gestor.OrdenarMergeSort(lista);
+            // Assert
+            Assert.Equal("Tamales", lista[0].Nombre);
+            Assert.Equal("Enchiladas", lista[1].Nombre);
+            Assert.Equal("Barbacoa", lista[2].Nombre);
+        }
+        [Fact]
+        public void BusquedaBinaria_RecetaExistente_RetornarIndiceValido()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta>
+            {
+                new Receta("Barbacoa", "Chef Gaby", 180),
+                new Receta("Enchiladas", "Chef Sofia", 25),
+                new Receta("Tamales", "Chef Pepe", 45)
+            };
+
+            // Act
+            int indice = gestor.BusquedaBinaria(lista, "Enchiladas");
+
+            // Assert
+            Assert.Equal(1, indice);
+            Assert.Equal("Enchiladas", lista[indice].Nombre);
+        }
+        [Fact]
+        public void BusquedaBinaria_CaseInsensitive_Encuentra()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta>
+            {
+                new Receta("Barbacoa", "Chef Gaby", 180),
+                new Receta("Enchiladas", "Chef Sofia", 25),
+                new Receta("Tamales", "Chef Pepe", 45)
+            };
+            // Act
+            int indice = gestor.BusquedaBinaria(lista, "enchiladas");
+            // Assert
+            Assert.Equal(1, indice);
+            Assert.Equal("Enchiladas", lista[indice].Nombre);
+        }
+        [Fact]
+        public void BusquedaBinaria_NoExiste_RetornarMenosUno()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            var lista = new List<Receta>
+            {
+                new Receta("Barbacoa", "Chef Gaby", 180),
+                new Receta("Enchiladas", "Chef Sofia", 25),
+                new Receta("Tamales", "Chef Pepe", 45)
+            };
+            // Act
+            int indice = gestor.BusquedaBinaria(lista, "Sopa");
+            // Assert
+            Assert.Equal(-1, indice);
+        }
+        [Fact]
+        public void LimpiarCatalago_DejarListaVacia()
+        {
+            // Arrange
+            var gestor = new GestorRecetas();
+            gestor.AgregarReceta(new Receta("Tacos", "Chef Juan", 15));
+            gestor.AgregarReceta(new Receta("Quesadillas", "Chef Ana", 10));
+            // Act
+            gestor.limpiarCatálogo();
+            // Assert
+            Assert.Empty(gestor.CatálogoGlobal);
+        }
+    }
+}

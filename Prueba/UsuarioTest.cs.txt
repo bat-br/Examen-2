@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Xunit;
-using SistemaGestorRecetas.Modelos;
 
-namespace SistemaGestorRecetas.Tests
+
+namespace Usuario.Tests
 {
     public class UsuarioTests
     {
@@ -17,7 +14,7 @@ namespace SistemaGestorRecetas.Tests
             u.CrearLibroRecetas("Favoritas");
 
             // Assert
-           
+
             Assert.True(u.MisLibros.ContainsKey("Favoritas"));
             Assert.Empty(u.MisLibros["Favoritas"]);
         }
@@ -30,7 +27,7 @@ namespace SistemaGestorRecetas.Tests
             u.CrearLibroRecetas("Favoritas");
 
             // Act & Assert
-            // Intentar crear el mismo libro debe lanzar la excepción de operación inválida
+            // Intentar crear el mismo libro debe lanzar la excepci�n de operaci�n inv�lida
             Assert.Throws<InvalidOperationException>(() => u.CrearLibroRecetas("Favoritas"));
         }
 
@@ -39,15 +36,15 @@ namespace SistemaGestorRecetas.Tests
         {
             // Arrange
             var u = new Usuario("Bruno");
-            u.CrearLibroRecetas("Comida Rápida");
+            u.CrearLibroRecetas("Comida R�pida");
             var receta = new Receta("Pollo Frito", "Chef Coronel", 45);
 
             // Act
-            u.AgregarRecetaALibro("Comida Rápida", receta);
+            u.AgregarRecetaALibro("Comida R�pida", receta);
 
             // Assert
-          
-            Assert.Single(u.MisLibros["Comida Rápida"]);
+
+            Assert.Single(u.MisLibros["Comida R�pida"]);
         }
 
         [Fact]
@@ -58,8 +55,19 @@ namespace SistemaGestorRecetas.Tests
             var receta = new Receta("Pizza de Pepperoni", "Chef Luigi", 30);
 
             // Act & Assert
-          
+
             Assert.Throws<KeyNotFoundException>(() => u.AgregarRecetaALibro("Inexistente", receta));
+        }
+        [Fact]
+        public void EliminarLibro_RemoveDellDiccionario()
+        {
+            // Arrange
+            var u = new Usuario("Bruno");
+            u.CrearLibroRecetas("Postres");
+            // Act
+            u.EliminarLibro("Postres");
+            // Assert
+            Assert.False(u.MisLibros.ContainsKey("Postres"));
         }
 
         [Fact]
@@ -77,9 +85,44 @@ namespace SistemaGestorRecetas.Tests
             int totalRecetas = u.ContarRecetas();
 
             // Assert
-           
+
             Assert.Equal(2, totalRecetas);
         }
+        [Fact]
+        public void ObtenerLibroExistente_RetornaLibro()
+        {
+            // Arrange
+            var u = new Usuario("Bruno");
+            u.CrearLibroRecetas("Postres");
+            // Act
+            var libro = u.ObtenerLibro("Postres");
+            // Assert
+            Assert.NotNull(libro);
+            Assert.Equal("Postres", libro.Nombre);
+        }
+        [Fact]
+        public void ObtenerLibroExistente_RetornaLista()
+        {
+            // Arrange
+            var u = new Usuario("Bruno");
+            u.CrearLibroRecetas("Cenas");
+            var receta = new Receta("Hamburguesa", "Chef Carlos", 20);
+            u.AgregarRecetaALibro("Cenas", receta);
+            // Act
+            var recetas = u.ObtenerLibro("Cenas");
+            // Assert
+            Assert.NotNull(recetas);
+            Assert.Single(recetas);
+            Assert.Contains(receta, recetas);
+        }
+        [Fact]
+        public void ObtenerLibroInexistente_RetornaNull()
+        {   // Arrange
+            var u = new Usuario("Bruno");
+            // Act
+            var libro = u.ObtenerLibro("Magia");
+            // Assert
+            Assert.Null(libro);
+        }
     }
-}
 }

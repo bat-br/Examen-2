@@ -1,0 +1,167 @@
+namespace Servicio
+{
+    public class ServicioRecetasTest
+    {
+        [Fact]
+        public void RegistrarUsuario_AgregarALista()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario = new Usuario("Bruno");
+            // Act
+            servicio.RegistrarUsuario(usuario);
+            // Assert
+            Assert.Contains(usuario, servicio.Usuarios);
+        }
+
+        [Fact]
+        public void BusacrUsuario_CaseInsensitive_Encuentra()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario = new Usuario("Bruno");
+            servicio.RegistrarUsuario(usuario);
+            // Act
+            var resultado = servicio.BuscarUsuario("bruno");
+            // Assert
+            Assert.NotNull(resultado);
+            Assert.Equal("Bruno", resultado.Nombre);
+        }
+        [Fact]
+        public void BuscarUsuario_Inexistente_RetornaNull()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            servicio.RegistrarUsuario(new Usuario("Bruno"));
+            // Act
+            var resultado = servicio.BuscarUsuario("Carlos");
+            // Assert
+            Assert.Null(resultado);
+        }
+        [Fact]
+        public void EliminarUsuario_ReduceCount()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario1 = new Usuario("Bruno");
+            var usuario2 = new Usuario("Carlos");
+            servicio.RegistrarUsuario(usuario1);
+            servicio.RegistrarUsuario(usuario2);
+            // Act
+            servicio.EliminarUsuario("Bruno");
+            // Assert
+            Assert.DoesNotContain(usuario1, servicio.Usuarios);
+            Assert.Contains(usuario2, servicio.Usuarios);
+        }
+        [Fact]
+        public void OrdenarCatalogo_Quick_OrdenCorrecto()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario1 = new Usuario("Bruno");
+            var usuario2 = new Usuario("Carlos");
+            servicio.RegistrarUsuario(usuario1);
+            servicio.RegistrarUsuario(usuario2);
+            // Act
+            servicio.OrdenarCatalogo();
+            // Assert
+            Assert.Equal("Bruno", servicio.Usuarios[0].Nombre);
+            Assert.Equal("Carlos", servicio.Usuarios[1].Nombre);
+        }
+        [Fact]
+        public void OrdenaraCatalogo_Merge_OrdenCorrecto()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario1 = new Usuario("Bruno");
+            var usuario2 = new Usuario("Carlos");
+            servicio.RegistrarUsuario(usuario1);
+            servicio.RegistrarUsuario(usuario2);
+            // Act
+            servicio.OrdenarCatalogoMerge();
+            // Assert
+            Assert.Equal("Bruno", servicio.Usuarios[0].Nombre);
+            Assert.Equal("Carlos", servicio.Usuarios[1].Nombre);
+        }
+        [Fact]
+        public void BuscarEnCatalogo_Existe_RetornaIndiceValido()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario1 = new Usuario("Bruno");
+            var usuario2 = new Usuario("Carlos");
+            servicio.RegistrarUsuario(usuario1);
+            servicio.RegistrarUsuario(usuario2);
+            // Act
+            var indice = servicio.BuscarCatalogo("Bruno");
+            // Assert
+            Assert.Equal(0, indice);
+        }
+        [Fact]
+        public void BuscarEnCatalgo_Inexistente_RetornaMenosUno()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario1 = new Usuario("Bruno");
+            var usuario2 = new Usuario("Carlos");
+            servicio.RegistrarUsuario(usuario1);
+            servicio.RegistrarUsuario(usuario2);
+            // Act
+            var indice = servicio.BuscarCatalogo("Maria");
+            // Assert
+            Assert.Equal(-1, indice);
+        }
+
+        [Fact]
+        public void ExportarATxt_CrearArchivo()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario = new Usuario("Bruno");
+            servicio.RegistrarUsuario(usuario);
+            string rutaArchivo = "usuarios.txt";
+            // Act
+            servicio.ExportarUsuariosATxt(rutaArchivo);
+            // Assert
+            Assert.True(File.Exists(rutaArchivo));
+            // Limpieza
+            File.Delete(rutaArchivo);
+        }
+        [Fact]
+        public void ExportaATxtx_ContieneNombreReceta()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario = new Usuario("Bruno");
+            servicio.RegistrarUsuario(usuario);
+            string rutaArchivo = "usuarios.txt";
+            // Act
+            servicio.ExportarUsuariosATxt(rutaArchivo);
+            string contenido = File.ReadAllText(rutaArchivo);
+            // Assert
+            Assert.Contains("Bruno", contenido);
+            // Limpieza
+            File.Delete(rutaArchivo);
+        }
+        [Fact]
+        public void ExportaATxt_ContieneNombreUsuario()
+        {
+            // Arrange
+            var servicio = new ServicioRecetas();
+            var usuario = new Usuario("Bruno");
+            servicio.RegistrarUsuario(usuario);
+            string rutaArchivo = "usuarios.txt";
+            // Act
+            servicio.ExportarUsuariosATxt(rutaArchivo);
+            string contenido = File.ReadAllText(rutaArchivo);
+            // Assert
+            Assert.Contains("Bruno", contenido);
+            // Limpieza
+            File.Delete(rutaArchivo);
+        }
+        public void Dispose()
+        {
+            // Limpieza de recursos si es necesario
+        }
+    }
+}
